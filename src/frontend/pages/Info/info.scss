@@ -1,0 +1,98 @@
+@import '../../utilities/mixins.scss'; 
+@import '../../utilities/variables.scss';
+@import '../../utilities/extends.scss';
+
+.info {
+    height: 100%;
+
+    h1 {
+        letter-spacing: $letter-space;
+        font-size: $base__font-size;
+        font-weight: $font-weight--bold;
+        text-transform: uppercase;
+        animation: text 3s 1;
+    }
+    
+    .content {
+        @extend %center;
+        @include flexbox($dir: column);
+        @include mq('medium') {
+            @include flexbox($dir: row);
+            margin: 0 50%;
+        }
+    }
+}
+
+.text {
+    font-size: 16px;
+    text-align: center;
+    color: $white;
+    font-weight: $font-weight--bold;
+    @include rpos($top: 10%);
+    @include mq('medium') {
+        font-size: 20px;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+}
+
+.textbox {
+    @include dim($w: 400px, $h: 150px);
+    @extend %box-shadow;
+    flex-shrink: 0;
+    background: $light-black;
+    margin: 100px auto;
+    margin-top: 30px;
+    border-radius: $br--default;
+    position: relative;
+    padding: 30px;
+    @include mq('medium') {
+        @include dim($w: 220px, $h: 300px);
+            margin-right: 50px;
+        @include mq('large') {
+            @include dim($w: 300px, $h: 300px);
+            margin-right: 120px;
+        }
+    }
+}
+
+.info-image, .textbox, .text, .home-button {
+    animation: fadeOut 3s;
+}
+
+.info-image {
+    width: 400px;
+    @extend %box-shadow;
+    border-radius: $br--default;
+    margin: -50px auto 50px auto;
+    transition: all .9s;
+    @include mq('medium') {
+        margin: 50px 50px 0 0;
+    }
+    &:hover {
+        @extend %mouseover;
+    }
+}
+
+.button {
+    margin-top: 50px;
+    @include mq('medium') {
+        @include apos($top: 800px, $right: 50%);
+    }
+}
+
+.home-button {
+    background-color: $black;
+    font-size: 20px;
+    color: $white;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: $br--default;
+    padding: 20px;
+    transition: all .6s;
+    &:hover {
+        opacity: .5;
+    }
+}

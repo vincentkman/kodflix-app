@@ -1,0 +1,19 @@
+@import './utilities/mixins'; 
+@import './utilities/variables';
+@import './utilities/extends';
+@import './utilities/keyframes';
+
+
+body {
+  background: $white-smoke;
+  font-family: $font-stack;
+}
+
+.App {
+  text-align: center;
+  animation: fadeOut 3s;
+}
+
+.App .film-title:hover, .overlay:hover {
+  animation: text2 3s 1;
+}

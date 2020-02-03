@@ -1,0 +1,37 @@
+@import '../../../utilities/mixins'; 
+@import '../../../utilities/variables';
+@import '../../../utilities/extends';
+
+.film-title {
+    color: $white;
+  }
+
+.container {
+    @include grid(
+      $gap: 5px, 
+      $temp-col: repeat(auto-fit, minmax(250px, 1fr)));
+  }
+  
+  .item {
+    position: relative;
+    overflow: hidden;
+    &:hover {
+      .overlay {
+        background: $light-black;
+        top: 0;
+      }
+    }
+  }
+  
+  .overlay {
+    @include apos($left: 0);
+    @include dim($w: 100%, $h: 100%);
+    transition: all .9s;
+    animation: fadeOut 8s;
+  }
+  
+  .mainImg {
+    @include dim($w: 100%, $h: 100%);
+    display: block;
+    animation: fadeOut 3s;
+  }
